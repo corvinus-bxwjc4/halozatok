@@ -1,0 +1,86 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: bold;
+    text-align: center;
+}
+
+#article,
+#aside,
+#footer,
+#header,
+#nav {
+    padding: 20px;
+}
+
+#header {
+    background-color: burlywood;
+}
+
+#nav {
+    border: 9px double black;
+    display: flex;
+    background-color: burlywood;
+}
+a{
+    color:brown;
+}
+#article {
+    text-align: left;
+    background: brown;
+}
+
+#aside {
+    background-color: burlywood;
+}
+
+#footer {
+    background: hotpink;
+    width: 100%;
+}
+img{
+    height: 500px;
+    width: 800px;
+}
+
+/* menü */
+#nav {
+    display: flex;
+}
+
+    #nav a {
+        /* ugyanaz, mint flex-grow:1; flex-shrink:1;flex-basis:auto;*/
+        flex: 1 1 auto;
+        text-decoration: none;
+        color: black;
+    }
+
+/* 800px-nél nagyobb képernyő*/
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #nav,
+    #header {
+        order: -1;
+    }
+
+    #article {
+        flex: 1 1 75%;
+    }
+
+    #aside {
+        flex: 1 1 25%;
+    }
+}
