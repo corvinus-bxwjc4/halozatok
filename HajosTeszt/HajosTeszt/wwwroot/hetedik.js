@@ -29,6 +29,9 @@ function kerdesMegjelenites(k)
 
 function elore()
 {
+    document.getElementById("válasz1").style.backgroundColor = "white"
+    document.getElementById("válasz2").style.backgroundColor = "white"
+    document.getElementById("válasz3").style.backgroundColor = "white"
     haladas++
     if (haladas == kerdesek.length) {
         haladas = 0;
@@ -38,6 +41,9 @@ function elore()
 
 function vissza()
 {
+    document.getElementById("válasz1").style.backgroundColor = "white"
+    document.getElementById("válasz2").style.backgroundColor = "white"
+    document.getElementById("válasz3").style.backgroundColor = "white"
     if (haladas == 0) {
         haladas = 2;
         kerdesMegjelenites(haladas)
@@ -52,7 +58,19 @@ function szinez()
 {
     var jovalasz = kerdesek[haladas].correctAnswer
     //console.log(jovalasz)
-    if () {
-
+    if (jovalasz == 1) {
+        document.getElementById("válasz1").style.backgroundColor = "green"
+        document.getElementById("válasz2").style.backgroundColor = "red"
+        document.getElementById("válasz3").style.backgroundColor = "red"
+    }
+    else if (jovalasz == 2) {
+        document.getElementById("válasz1").style.backgroundColor = "red"
+        document.getElementById("válasz2").style.backgroundColor = "green"
+        document.getElementById("válasz3").style.backgroundColor = "red"
+    } 
+    else {
+        document.getElementById("válasz1").style.backgroundColor = "red"
+        document.getElementById("válasz2").style.backgroundColor = "red"
+        document.getElementById("válasz3").style.backgroundColor = "green"
     }
 }
