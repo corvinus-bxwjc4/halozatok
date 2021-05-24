@@ -4,15 +4,15 @@ var ajdi = 0;
 var szin;
 
 window.onload = () => {
-    letoltes()
+    betoltes()
 }
 
-function letoltes()
+function betoltes()
 {
     //fetch('/questions/all').then(r => r.json()).then(d => letöltésBefejeződött(d));
     fetch('/questions/1')
         .then(response => response.json())
-        .then(data => kerdesMegjelenites(data)
+        .then(data => whiskyMegjelenites(data)
         );
 }
 
@@ -24,7 +24,7 @@ function letöltésBefejeződött(d)
     //kerdesMegjelenites(0);
 }
 
-function kerdesMegjelenites(k)
+function whiskyMegjelenites(k)
 {
     console.log(k);
     szin = k;
@@ -53,7 +53,7 @@ function elore()
     if (haladas == 860) {
         haladas = 1;
     }
-    kérdésBetöltés(haladas);
+    whiskyBetoltes(haladas);
 }
 
 function vissza()
@@ -66,7 +66,7 @@ function vissza()
         haladas = 859;
         //kérdésBetöltés(haladas);
     } 
-    kérdésBetöltés(haladas);
+    whiskyBetoltes(haladas);
     
 }
 
@@ -91,7 +91,7 @@ function szinez()
     }
 }
 
-function kérdésBetöltés(id) {
+function whiskyBetoltes(id) {
     ajdi = id;
     fetch(`/questions/${ajdi}`)
         .then(response => {
@@ -102,5 +102,5 @@ function kérdésBetöltés(id) {
                 return response.json()
             }
         })
-        .then(data => kerdesMegjelenites(data));
+        .then(data => whiskyMegjelenites(data));
 }    

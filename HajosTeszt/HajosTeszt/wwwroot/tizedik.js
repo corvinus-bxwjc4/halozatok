@@ -17,11 +17,11 @@ window.onload = () => {
     init();
 }
 
-function letoltes() {
+function betoltes() {
     //fetch('/questions/all').then(r => r.json()).then(d => letöltésBefejeződött(d));
     fetch('/questions/1')
         .then(response => response.json())
-        .then(data => kerdesMegjelenites(data)
+        .then(data => whiskyMegjelenites(data)
         );
 }
 
@@ -32,7 +32,7 @@ function letöltésBefejeződött(d) {
     //kerdesMegjelenites(0);
 }
 
-function kerdesMegjelenites() {
+function whiskyMegjelenites() {
     let kérdés = hotList[displayedQuestion].question;
     console.log(kérdés);
     document.getElementById("kérdés_szöveg").innerHTML = kérdés.questionText;
@@ -56,7 +56,7 @@ function elore() {
     clearTimeout(timeoutHandler)
     displayedQuestion++;
     if (displayedQuestion == questionsInHotList) displayedQuestion = 0;
-    kerdesMegjelenites()
+    whiskyMegjelenites()
 }
 
 function vissza() {
@@ -68,7 +68,7 @@ function vissza() {
     document.getElementById(`válasz3`).style.pointerEvents = "auto"
     displayedQuestion--;
     if (displayedQuestion === -1) displayedQuestion = 2;
-    kerdesMegjelenites()
+    whiskyMegjelenites()
 
 }
 
@@ -104,7 +104,7 @@ function ellenorzesElso() {
     if (jovalasz.correctAnswer == 1) {
         hotList[displayedQuestion].goodAnswers++;
         if (hotList[displayedQuestion].goodAnswers == 3) {
-            kérdésBetöltés(nextQuestion, displayedQuestion)
+            whiskyBetoltes(nextQuestion, displayedQuestion)
             nextQuestion++
         }
     } else {
@@ -117,7 +117,7 @@ function ellenorzesMasodik() {
     if (jovalasz.correctAnswer == 2) {
         hotList[displayedQuestion].goodAnswers++;
         if (hotList[displayedQuestion].goodAnswers == 3) {
-            kérdésBetöltés(nextQuestion, displayedQuestion)
+            whiskyBetoltes(nextQuestion, displayedQuestion)
             nextQuestion++
         }
     } else {
@@ -130,7 +130,7 @@ function ellenorzesHarmadik() {
     if (jovalasz.correctAnswer == 3) {
         hotList[displayedQuestion].goodAnswers++;
         if (hotList[displayedQuestion].goodAnswers == 3) {
-            kérdésBetöltés(nextQuestion, displayedQuestion)
+            whiskyBetoltes(nextQuestion, displayedQuestion)
             nextQuestion++
         }
     } else {
@@ -139,7 +139,7 @@ function ellenorzesHarmadik() {
 }
 
 
-function kérdésBetöltés(questionNumber, destination) {
+function whiskyBetoltes(questionNumber, destination) {
     fetch(`/questions/${questionNumber}`)
         .then(
             result => {
@@ -158,7 +158,7 @@ function kérdésBetöltés(questionNumber, destination) {
                 console.log(`A ${questionNumber}. kérdés letöltve a hot list ${destination}. helyére`)
                 if (displayedQuestion == undefined && destination == 0) { //!!!!!!!!!!!!!
                     displayedQuestion = 0;
-                    kerdesMegjelenites();
+                    whiskyMegjelenites();
                 }
             }
         );
@@ -175,7 +175,7 @@ function init() {
 
     //Első kérdések letöltése
     for (var i = 0; i < questionsInHotList; i++) {
-        kérdésBetöltés(nextQuestion, i);
+        whiskyBetoltes(nextQuestion, i);
         nextQuestion++;
     }
 }

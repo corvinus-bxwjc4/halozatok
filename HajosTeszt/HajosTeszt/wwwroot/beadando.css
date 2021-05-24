@@ -1,0 +1,109 @@
+﻿div {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+html, body {
+    height: 85%;
+}
+
+#külső {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*background-image: url(./Rbde8023831d05f9d179c1c1c4953de11.jpg);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;*/
+    background-color: darkslategray;
+}
+
+footer, header {
+    padding: 20px;
+    text-align: center;
+}
+
+#vezérlő {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+.gomb {
+    padding: 20px;
+    width: 80px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.kattintható:hover {
+    background-color: fuchsia;
+    color: white;
+}
+
+#szöveg {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20pt;
+    text-align: center;
+    padding: 20px;
+    background-color: aqua;
+}
+
+#ujadat {
+    margin: 0 auto;
+    background-color: aqua;
+    width:50%;
+}
+
+.formaz {
+    margin: 0 auto;
+}
+
+.txtbox {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.futerclass, .cim {
+    background-color: cadetblue;
+    font-weight: bold;
+}
+
+.link {
+    padding: 20px;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    font-size: 16pt;
+}
+
+#indexkülső {
+    background-color: darkslategray;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.valami {
+    padding: 5px;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: 900;
+}
+
+.hozzaad{
+    float:left;
+}
+.torol{
+    float:right;
+}
